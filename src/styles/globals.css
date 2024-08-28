@@ -14,6 +14,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "poppins";
+  src: url("/font/PoppinsRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "styrene2";
+  src: url("/font/message.woff2") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 /* hide spin button on number input */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -44,7 +57,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 * {
-  font-family: "styrene", sans-serif;
+  font-family: "styrene2", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -58,19 +71,20 @@ input[type="number"]::-webkit-outer-spin-button {
     --popover-foreground: #f8f8f7; /*oncolor-200*/
     --primary: #ba5b38; /*accent-main-100*/
     --primary-foreground: #ffffff; /*oncolor-100*/
-    --secondary: #f4f4f5; /*no*/
+    --secondary: hsla(16, 54%, 47%, 0.8); /*ba5b3866*/
     --secondary-foreground: #18181b; /*no*/
     --muted: #f4f4f5; /*no*/
     --muted-foreground: #71717a; /*no*/
-    --accent: #f4f4f5; /*no*/
+    --accent: #c96442; /*--accent-main-200*/
     --accent-foreground: #18181b; /*no*/
     --destructive: #7c1b13; /*danger-000*/
     --destructive-foreground: #fafafa; /*no*/
-    --border: #706b57; /*border-300*/
+    --border: #706b5740; /*border-300*/
     --input: #706b57; /*border-200*/
     --ring: #706b57; /*border-100*/
     --radius: 0.5rem;
     --primary-gradient: linear-gradient(to right, #f5f4ef, #f0eee5);
+    --backdrop: #00000080;
     /* --text-000: 49 6.9% 5.5%;
     --text-100: 49 19.6% 13.3%;
     --text-200: 49 18.8% 20%;
@@ -135,4 +149,19 @@ h6 {
 
 p {
   @apply text-sm font-normal text-secondary-foreground sm:text-base;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--background);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--border);
 }

@@ -45,6 +45,9 @@ module.exports = {
         DEFAULT: "var(--card)",
         foreground: "var(--card-foreground)",
       },
+      backdrop: {
+        DEFAULT: "var(--backdrop)",
+      },
     },
     screens: {
       sm: "640px",
@@ -55,7 +58,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["styrene"],
+        poppins: ["Poppins", "sans-serif"],
+        styrene: ["styrene", "sans-serif"],
+        styrene2: ["styrene2", "sans-serif"],
       },
       fontWeight: {
         thin: 100,

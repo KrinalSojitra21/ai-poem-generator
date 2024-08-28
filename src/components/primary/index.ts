@@ -1,5 +1,6 @@
-export { PrimaryInput } from "./PrimaryInput";
-export { PrimaryButton } from "./PrimaryButton";
+export {PrimaryButton} from "./PrimaryButton";
+export {PrimarySelect} from "./PrimarySelect";
+export {PrimaryInput} from "./PrimaryInput";
 // export {} from "./PrimarySelect";
 // export {} from "./PrimaryTextarea";
 // export {} from "./PrimaryCheckbox";
