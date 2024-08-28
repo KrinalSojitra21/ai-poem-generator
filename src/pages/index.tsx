@@ -1,6 +1,6 @@
 import {PrimaryInput} from "@/components/primary";
 import InfoDialog from "@/components/primary/components/InfoDialog";
-import {GithubIcon} from "@/icons/githubIcon";
+import {GithubIcon} from "@/icons/GithubIcon";
 import {NoFoundIcon} from "@/icons/NoFoundIcon";
 import {defaultFormData, FormDataTypes} from "@/types/types";
 import {useState} from "react";
