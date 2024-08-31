@@ -9,6 +9,33 @@ export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formCurrentData, setFormCurrentData] =
     useState<FormDataTypes>(defaultFormData);
+  const [prompt, setPrompt] = useState(
+    "about rainy wether, which syllable counts 4 and poem length 5-10 lines"
+  );
+  const [poem, setPoem] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const generatePoem = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/generate-poem", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({prompt, ...formCurrentData}),
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setPoem(data.poem);
+    } catch (error) {
+      console.error("Error generating poem:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <main
@@ -37,6 +64,8 @@ export default function Home() {
                 title="Write Prompt"
                 rows={4}
                 placeholder="Add Prompt Here"
+                value={prompt}
+                onChange={(e) => setPrompt(e.target.value)}
               />
               <InfoDialog
                 formCurrentData={formCurrentData}
@@ -46,24 +75,30 @@ export default function Home() {
             <button
               className="rounded-md px-3 py-2 bg-primary text-primary-foreground mx-4 mb-4"
               style={{maxHeight: "40px"}}
-              title={"Info"}
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsDialogOpen(true);
-              }}
+              title={"Generate"}
+              onClick={generatePoem}
+              disabled={isLoading}
             >
-              Publish Poem
+              {isLoading ? "Generating..." : "Generate Poem"}
             </button>
           </div>
           <div className="md:flex-1 h-full pb-4 md:pl-4 md:pr-0 pr-0 pl-0">
             <div className="md:rounded-l-3xl border border-border h-full overflow-hidden">
               <div className="bg-muted h-full flex flex-col items-center justify-center p-10">
-                <NoFoundIcon />
-                <h2 className="pt-10 text-center">Create your first Poem</h2>
-                <h6 className="md:w-[45%] w-[80%] text-center pt-2">
-                  Create your AI poem with a touch of creativity and
-                  inspiration. Let the words come to life with just a click!
-                </h6>
+                {poem ? (
+                  <div className="whitespace-pre-wrap">{poem}</div>
+                ) : (
+                  <>
+                    <NoFoundIcon />
+                    <h2 className="pt-10 text-center">
+                      Create your first Poem
+                    </h2>
+                    <h6 className="md:w-[45%] w-[80%] text-center pt-2">
+                      Create your AI poem with a touch of creativity and
+                      inspiration. Let the words come to life with just a click!
+                    </h6>
+                  </>
+                )}
               </div>
             </div>
           </div>
