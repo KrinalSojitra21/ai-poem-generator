@@ -1,40 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align='center'>
 
-## Getting Started
+# [AI Poem Generator](https://ai-poem-generator-krinals-projects.vercel.app/)
 
-First, run the development server:
+</div>
+
+![AI Poem Generator](https://imgur.com/XEgTEyI.png)
+
+AI Poem Generator is an innovative web application that harnesses the power of artificial intelligence to create unique and inspiring poems. By leveraging the Anthropic API and a suite of modern web technologies, this project offers users a seamless and interactive experience in generating AI-crafted poetry.
+
+# Features ✨
+
+- **AI-Powered Poem Generation:** Create stunning poems using advanced AI technology from Anthropic.
+
+- **Customizable Poetry Forms:** Choose from various poetic forms like sonnets, haikus, villanelles, and more.
+
+- **Theme and Mood Selection:** Tailor your poem's theme and mood to match your creative vision.
+
+- **Literary Device Integration:** Incorporate metaphors, symbolism, and other literary devices into your AI-generated poems.
+
+- **Word Inclusion:** Specify words to be included in your generated poem for a personalized touch.
+
+- **Adjustable Creativity Levels:** Fine-tune the AI's creativity to match your desired output.
+
+- **Tone Selection:** Choose the overall tone of your poem, from melancholic to upbeat.
+
+- **Emotion Evocation:** Select specific emotions you want your poem to evoke in readers.
+
+- **User-Friendly Interface:** Enjoy a sleek, intuitive design that makes poem generation a breeze.
+
+- **Responsive Design:** Access the AI Poem Generator on various devices with a responsive layout.
+
+## Tech Stack 💻
+
+**AI Poem Generator is built using the following technologies:**
+
+- **Next.js:** The core framework for building a fast and scalable web application.
+
+- **Anthropic API:** Powers the AI-driven poem generation capabilities.
+
+- **Tailwind CSS:** Utilized for rapid and responsive UI development.
+
+- **TypeScript:** Enhances code quality and developer productivity with static typing.
+
+- **Redux Toolkit:** Manages the application's state efficiently.
+
+- **React Select:** Provides enhanced select input components.
+
+- **React Hot Toast:** Offers elegant notifications for user feedback.
+
+- **ESLint & Prettier:** Ensures code quality and consistent formatting.
+
+## Getting Started 🚀
+
+To run the AI Poem Generator locally:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/ai-poem-generator.git
+```
+
+2. Install dependencies:
+
+```bash
+cd ai-poem-generator
+npm install
+```
+
+3. Set up environment variables:
+   Create a .env.local file in the root directory and add your Anthropic API key:
+
+```bash
+ANTHROPIC_API_KEY=your_api_key_here
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.<br>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<div align='center'>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Click [here](https://ai-poem-generator-krinals-projects.vercel.app/) to visit the live demo website.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+</div>
