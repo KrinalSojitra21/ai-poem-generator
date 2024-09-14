@@ -37,7 +37,8 @@ export default async function handler(
       return res.status(405).json({error: `Method ${req.method} Not Allowed`});
     }
 
-    if (!process.env.ANTHROPIC_API_KEY) {
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
       console.error("ANTHROPIC_API_KEY is not set");
       return res.status(500).json({error: "Server configuration error"});
     }
@@ -47,24 +48,17 @@ export default async function handler(
     console.log("Received prompt:", prompt);
     console.log("Received formData:", JSON.stringify(formData));
 
-    const anthropic = new Anthropic({
-      apiKey: process.env.ANTHROPIC_API_KEY,
-    });
+    const anthropic = new Anthropic({apiKey});
     console.log("Anthropic instance created");
 
     const messageContent = `Write a poem based on the following prompt: ${prompt}. 
-                            Use these additional parameters: ${JSON.stringify(formData)}`;
+                               Use these additional parameters: ${JSON.stringify(formData)}`;
     console.log("Message content:", messageContent);
 
     const response = await anthropic.messages.create({
       model: "claude-3-sonnet-20240229",
       max_tokens: 300,
-      messages: [
-        {
-          role: "user",
-          content: messageContent,
-        },
-      ],
+      messages: [{role: "user", content: messageContent}],
     });
 
     console.log("Anthropic API response received");

@@ -85,6 +85,14 @@ input[type="number"]::-webkit-outer-spin-button {
     --radius: 0.5rem;
     --primary-gradient: linear-gradient(to right, #f5f4ef, #f0eee5);
     --backdrop: #00000080;
+    --primary-20: #c77150;
+    --primary-40: #d48669;
+    --primary-60: #e19c81;
+    --primary-80: #eeb29a;
+    --primary-020: #a05132;
+    --primary-040: #8a472c;
+    --primary-060: #743d26;
+    --primary-080: #5e331f;
     /* --text-000: 49 6.9% 5.5%;
     --text-100: 49 19.6% 13.3%;
     --text-200: 49 18.8% 20%;
@@ -164,4 +172,25 @@ p {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: var(--border);
+}
+
+@layer utilities {
+  .white-cursor {
+    cursor:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="white"/></svg>')
+        12 12,
+      auto;
+  }
+  .black-cursor {
+    cursor:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="black"/></svg>')
+        12 12,
+      auto;
+  }
+  .yellow-cursor {
+    cursor:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="var(--primary)"/></svg>')
+        12 12,
+      auto;
+  }
 }

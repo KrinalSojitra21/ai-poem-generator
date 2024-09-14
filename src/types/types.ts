@@ -4,7 +4,7 @@ export type FormDataTypes = {
   poeticForm: Option | null;
   rhymeScheme: Option | null;
   syllableCount: number;
-  poemLength: "short" | "medium" | "long";
+  poemLength: "short" | "medium" | "long" | null;
   theme: Option | null;
   topic: Option | null;
   favoritePoet: Option | null;
@@ -18,7 +18,7 @@ export const defaultFormData: FormDataTypes = {
   poeticForm: null,
   rhymeScheme: null,
   syllableCount: 0,
-  poemLength: "short",
+  poemLength: null,
   theme: null,
   topic: null,
   favoritePoet: null,
