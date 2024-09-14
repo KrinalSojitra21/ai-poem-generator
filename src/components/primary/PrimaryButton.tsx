@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 
-import { cva, VariantProps } from "class-variance-authority";
 import LoadingIcon from "@/icons/LoadingIcon";
 import { cn } from "@/utils/common.utils";
+import { cva, VariantProps } from "class-variance-authority";
 
 const buttonVariants = cva(
   `inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-medium 
@@ -32,7 +32,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export type PrimaryButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
@@ -49,7 +49,7 @@ export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>(
       children,
       ...restProps
     },
-    ref
+    ref,
   ) => {
     return (
       <button
@@ -65,7 +65,7 @@ export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>(
         )}
       </button>
     );
-  }
+  },
 );
 
 PrimaryButton.displayName = "PrimaryButton";

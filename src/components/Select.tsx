@@ -20,7 +20,7 @@ export const Select: React.FC<SelectProps> = ({
 }) => {
   return (
     <select
-      className={`w-full p-2 rounded-md bg-purple-500 text-white placeholder-purple-200 ${className}`}
+      className={`bg-purple-500 text-white placeholder-purple-200 w-full rounded-md p-2 ${className}`}
       {...props}
     >
       <option value="">{placeholder}</option>
@@ -44,7 +44,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`px-4 py-2 rounded-md bg-white text-purple-600 font-bold hover:bg-purple-100 transition duration-300 ${className}`}
+      className={`bg-white text-purple-600 hover:bg-purple-100 rounded-md px-4 py-2 font-bold transition duration-300 ${className}`}
       {...props}
     >
       {children}

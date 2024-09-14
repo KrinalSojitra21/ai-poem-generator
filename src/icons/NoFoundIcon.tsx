@@ -4,7 +4,7 @@ interface NoFoundIconProps {
   className?: string;
 }
 
-export const NoFoundIcon: React.FC<NoFoundIconProps> = ({className}) => {
+export const NoFoundIcon: React.FC<NoFoundIconProps> = ({ className }) => {
   return (
     <svg
       width="266"

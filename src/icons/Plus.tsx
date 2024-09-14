@@ -5,7 +5,7 @@ interface PlusProps {
   className?: string;
 }
 
-export const Plus: React.FC<PlusProps> = ({size = 24, className}) => {
+export const Plus: React.FC<PlusProps> = ({ size = 24, className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

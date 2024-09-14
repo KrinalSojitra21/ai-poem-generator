@@ -4,7 +4,7 @@ interface GithubIconProps {
   className?: string;
 }
 
-export const GithubIcon: React.FC<GithubIconProps> = ({className}) => {
+export const GithubIcon: React.FC<GithubIconProps> = ({ className }) => {
   return (
     // <svg
     //   xmlns="http://www.w3.org/2000/svg"

@@ -14,7 +14,7 @@ const Loading: React.FC<LoadingProps> = ({
   barColor = "var(--primary)",
 }) => {
   return (
-    <div className="p-5 bg-white rounded-lg s">
+    <div className="bg-white s rounded-lg p-5">
       <div className="loading-container">
         <div className="loading-bar"></div>
       </div>

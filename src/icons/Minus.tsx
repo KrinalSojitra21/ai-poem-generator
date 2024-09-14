@@ -5,7 +5,7 @@ interface MinusProps {
   className?: string;
 }
 
-export const Minus: React.FC<MinusProps> = ({size = 24, className}) => {
+export const Minus: React.FC<MinusProps> = ({ size = 24, className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

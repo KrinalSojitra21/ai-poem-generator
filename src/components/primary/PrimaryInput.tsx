@@ -1,7 +1,6 @@
-import {getNestedValue} from "@/utils";
+import { cn } from "@/utils/common.utils";
 import React from "react";
-import {FieldValues, RegisterOptions, useFormContext} from "react-hook-form";
-import {cn} from "@/utils/common.utils";
+import { FieldValues, RegisterOptions, useFormContext } from "react-hook-form";
 
 export type PrimaryInputProps =
   React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -24,14 +23,14 @@ const PrimaryInput = React.forwardRef<HTMLTextAreaElement, PrimaryInputProps>(
       className,
       ...restProps
     },
-    ref
+    ref,
   ) => {
     const id = React.useId();
-    const {register, formState} = useFormContext() || {};
+    const { register, formState } = useFormContext() || {};
     const elementRegistration =
-      register?.(name, {...registerOptions, value: defaultValue}) || {};
+      register?.(name, { ...registerOptions, value: defaultValue }) || {};
 
-    const {errors} = formState || {};
+    const { errors } = formState || {};
 
     return (
       <div className="flex flex-col gap-2">
@@ -39,12 +38,12 @@ const PrimaryInput = React.forwardRef<HTMLTextAreaElement, PrimaryInputProps>(
         <textarea
           id={id}
           className={cn(
-            "bg-background flex w-full rounded-md border border-border px-3 py-2 text-base shadow-sm transition-colors placeholder:text-muted-foreground  focus-visible:outline-none focus-visible:ring-1 focus-visible:border-[#ba5b3866] focus-visible:ring-[#ba5b3866] disabled:cursor-not-allowed disabled:opacity-50",
-            className
+            "flex w-full rounded-md border border-border bg-background px-3 py-2 text-base shadow-sm transition-colors placeholder:text-muted-foreground  focus-visible:border-[#ba5b3866] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#ba5b3866] disabled:cursor-not-allowed disabled:opacity-50",
+            className,
           )}
           {...restProps}
           {...elementRegistration}
-          {...(ref ? {ref} : {})}
+          {...(ref ? { ref } : {})}
         />
         {description && <span className="mt-1 text-xs">{description}</span>}
         {/* {errorMessage && (
@@ -52,9 +51,9 @@ const PrimaryInput = React.forwardRef<HTMLTextAreaElement, PrimaryInputProps>(
         )} */}
       </div>
     );
-  }
+  },
 );
 
 PrimaryInput.displayName = "PrimaryInput";
 
-export {PrimaryInput};
+export { PrimaryInput };

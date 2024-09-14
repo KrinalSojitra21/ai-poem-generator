@@ -5,27 +5,27 @@ import {
   AccordionTrigger,
 } from "@/components/primary/Accordion";
 import {
+  creativityLevels,
+  emotionsEvoked,
+  favoritePoets,
+  genres,
+  onomatopoeiaWords,
   poeticForm,
   rhymeSchemes,
   themes,
-  topics,
-  favoritePoets,
-  genres,
-  creativityLevels,
   tones,
-  onomatopoeiaWords,
-  emotionsEvoked,
+  topics,
 } from "@/constants/options";
-import {PrimarySelect} from "../PrimarySelect";
-import {Tabs, TabsList, TabsTrigger, TabsContent} from "../Tabs";
-import {useRouter} from "next/router";
-import {FormDataTypes, Option} from "@/types/types";
-import {FeatherIcon} from "@/icons/FeatherIcon";
-import {BookOpenIcon} from "@/icons/BookOpenIcon";
-import {ToolsIcon} from "@/icons/ToolsIcon";
-import {Plus} from "@/icons/Plus";
-import {Minus} from "@/icons/Minus";
-import {MultiValue, SingleValue} from "react-select";
+import { BookOpenIcon } from "@/icons/BookOpenIcon";
+import { FeatherIcon } from "@/icons/FeatherIcon";
+import { Minus } from "@/icons/Minus";
+import { Plus } from "@/icons/Plus";
+import { ToolsIcon } from "@/icons/ToolsIcon";
+import { FormDataTypes, Option } from "@/types/types";
+import { useRouter } from "next/router";
+import { MultiValue, SingleValue } from "react-select";
+import { PrimarySelect } from "../PrimarySelect";
+import { Tabs, TabsList, TabsTrigger } from "../Tabs";
 
 type SelectChangeEvent = SingleValue<Option> | MultiValue<Option>;
 
@@ -57,7 +57,7 @@ const InfoDialog: React.FC<InfoProps> = ({
 
   const handleChange = (
     field: keyof FormDataTypes,
-    value: SelectChangeEvent | string | number
+    value: SelectChangeEvent | string | number,
   ) => {
     if (field === "syllableCount" || field === "poemLength") {
       setFormCurrentData((prevData) => ({
@@ -79,7 +79,7 @@ const InfoDialog: React.FC<InfoProps> = ({
       <AccordionItem value="form">
         <AccordionTrigger value="form">
           <span className="flex items-center">
-            <FeatherIcon className="md:mr-2 mr-1" />
+            <FeatherIcon className="mr-1 md:mr-2" />
             Form
           </span>
         </AccordionTrigger>
@@ -102,29 +102,29 @@ const InfoDialog: React.FC<InfoProps> = ({
               handleChange("rhymeScheme", value)
             }
           />
-          <div className="flex items-center gap-5 h-fit">
-            <label className="flex items-center h-full">Syllable Counts</label>
-            <div className="flex gap-2 w-fit items-center h-7">
+          <div className="flex h-fit items-center gap-5">
+            <label className="flex h-full items-center">Syllable Counts</label>
+            <div className="flex h-7 w-fit items-center gap-2">
               <div
-                className="h-5 aspect-square flex items-center justify-center rounded-sm bg-primary text-primary-foreground cursor-pointer"
+                className="flex aspect-square h-5 cursor-pointer items-center justify-center rounded-sm bg-primary text-primary-foreground"
                 onClick={() =>
                   handleChange(
                     "syllableCount",
-                    Math.max(0, formCurrentData.syllableCount - 1)
+                    Math.max(0, formCurrentData.syllableCount - 1),
                   )
                 }
               >
                 <Minus size={17} />
               </div>{" "}
-              <div className="border-b border-border rounded-md h-full flex items-center justify-center px-5 w-16 max-w-20">
+              <div className="flex h-full w-16 max-w-20 items-center justify-center rounded-md border-b border-border px-5">
                 {formCurrentData.syllableCount}
               </div>
               <div
-                className="h-5 aspect-square flex items-center justify-center rounded-sm bg-primary text-primary-foreground cursor-pointer"
+                className="flex aspect-square h-5 cursor-pointer items-center justify-center rounded-sm bg-primary text-primary-foreground"
                 onClick={() =>
                   handleChange(
                     "syllableCount",
-                    formCurrentData.syllableCount + 1
+                    formCurrentData.syllableCount + 1,
                   )
                 }
               >
@@ -141,15 +141,15 @@ const InfoDialog: React.FC<InfoProps> = ({
               }
               className="w-full rounded-2xl"
             >
-              <TabsList className="w-full flex mb-6 space-x-2">
+              <TabsList className="mb-6 flex w-full space-x-2">
                 <TabsTrigger
                   value="short"
                   isBordered
                   className="data-[state=active]:bg-white data-[state=active]:text-purple-600 rounded-md px-2 py-1"
                 >
-                  <span className="flex items-center md:h-full h-5 gap-1 text-base">
+                  <span className="flex h-5 items-center gap-1 text-base md:h-full">
                     Short
-                    <span className="text-sm flex items-center h-full pt-1 md:w-fit w-0 md:visible invisible">
+                    <span className="invisible flex h-full w-0 items-center pt-1 text-sm md:visible md:w-fit">
                       (5-10 Lines)
                     </span>
                   </span>
@@ -159,9 +159,9 @@ const InfoDialog: React.FC<InfoProps> = ({
                   isBordered
                   className="data-[state=active]:bg-white data-[state=active]:text-purple-600 rounded-md"
                 >
-                  <span className="flex items-center md:h-full h-5 gap-1 text-base">
+                  <span className="flex h-5 items-center gap-1 text-base md:h-full">
                     Medium
-                    <span className="text-sm flex items-center h-full pt-1 md:w-fit w-0 md:visible invisible">
+                    <span className="invisible flex h-full w-0 items-center pt-1 text-sm md:visible md:w-fit">
                       (10-30 Lines)
                     </span>
                   </span>
@@ -171,9 +171,9 @@ const InfoDialog: React.FC<InfoProps> = ({
                   isBordered
                   className="data-[state=active]:bg-white data-[state=active]:text-purple-600 rounded-md"
                 >
-                  <span className="flex items-center md:h-full h-5 gap-1 text-base">
+                  <span className="flex h-5 items-center gap-1 text-base md:h-full">
                     Long
-                    <span className="text-sm flex items-center h-full pt-1 md:w-fit w-0 md:visible invisible">
+                    <span className="invisible flex h-full w-0 items-center pt-1 text-sm md:visible md:w-fit">
                       (30+ Lines)
                     </span>
                   </span>
@@ -187,7 +187,7 @@ const InfoDialog: React.FC<InfoProps> = ({
       <AccordionItem value="inspiration">
         <AccordionTrigger value="inspiration">
           <span className="flex items-center">
-            <BookOpenIcon className="md:mr-2 mr-1" />
+            <BookOpenIcon className="mr-1 md:mr-2" />
             Inspiration
           </span>
         </AccordionTrigger>
@@ -235,7 +235,7 @@ const InfoDialog: React.FC<InfoProps> = ({
       <AccordionItem value="tools">
         <AccordionTrigger value="tools">
           <span className="flex items-center">
-            <ToolsIcon className="md:mr-2 mr-1" />
+            <ToolsIcon className="mr-1 md:mr-2" />
             Tools
           </span>
         </AccordionTrigger>

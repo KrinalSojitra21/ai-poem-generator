@@ -1,12 +1,12 @@
-import {Option} from "@/types/types";
-import Select, {StylesConfig, Props as SelectProps} from "react-select";
+import { Option } from "@/types/types";
+import { StylesConfig } from "react-select";
 
 export const colourStyles: StylesConfig<Option> = {
   clearIndicator: (base) => ({
     ...base,
     color: "red",
   }),
-  control: (styles, {menuIsOpen}) => ({
+  control: (styles, { menuIsOpen }) => ({
     ...styles,
     cursor: "pointer",
     backgroundColor: "transparent",
@@ -16,7 +16,7 @@ export const colourStyles: StylesConfig<Option> = {
       border: menuIsOpen ? "1px solid #ba5b3866" : "1px solid #706b5740",
     },
   }),
-  option: (styles, {data, isDisabled, isFocused, isSelected}) => {
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     return {
       ...styles,
       margin: 0,
@@ -34,7 +34,7 @@ export const colourStyles: StylesConfig<Option> = {
   },
   menu: (provided) => ({
     ...provided,
-    backgroundColor: "#E6E4DB", // A slightly different color from the options
+    backgroundColor: "#E6E4DB",
   }),
   valueContainer: (provided) => ({
     ...provided,

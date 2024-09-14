@@ -10,7 +10,7 @@ export const useHandleAsync = <T extends (...args: any[]) => Promise<any>>(
   props: Omit<
     HandleAsyncArgs<Response<Awaited<ReturnType<T>>>>,
     "loadingCallback" | "toast"
-  > = {}
+  > = {},
 ) => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
-import {Response} from "@/service/index.types";
-import {CustomError} from "./common.utils";
-import {ToastType} from "@/components/shared";
+import { ToastType } from "@/components/shared";
+import { Response } from "@/service/index.types";
+import { CustomError } from "./common.utils";
 
 export type HandleAsyncArgs<T> = {
   loadingCallback?: (status: boolean) => void;
@@ -23,7 +23,7 @@ export const handleAsync =
       successMessage,
       shouldHideErrorToast = false,
       onSuccess = () => {},
-    }: HandleAsyncArgs<Response<Awaited<ReturnType<T>>>>
+    }: HandleAsyncArgs<Response<Awaited<ReturnType<T>>>>,
   ) =>
   async (
     ...args: Parameters<T>
@@ -37,7 +37,7 @@ export const handleAsync =
       }
 
       if (successMessage && toast) {
-        toast({type: "SUCCESS", message: successMessage});
+        toast({ type: "SUCCESS", message: successMessage });
       }
       onSuccess?.(res);
       loadingCallback?.(false);
@@ -62,6 +62,6 @@ export const handleAsync =
           : new CustomError(`Unknown error: ${String(err)}`);
 
       loadingCallback?.(false);
-      return {error, status, data: null, message: message || "Unknown error"};
+      return { error, status, data: null, message: message || "Unknown error" };
     }
   };

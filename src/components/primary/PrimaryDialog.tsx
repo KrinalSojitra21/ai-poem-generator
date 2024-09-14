@@ -1,5 +1,5 @@
 import React from "react";
-import Select, {Props as SelectProps} from "react-select";
+import { Props as SelectProps } from "react-select";
 
 type ButtonProps = {
   text?: string;
@@ -11,7 +11,7 @@ type ButtonProps = {
 
 export type PrimaryDropDownProps = SelectProps & {
   label?: string;
-  title?: {text?: string; className?: string};
+  title?: { text?: string; className?: string };
   children?: React.ReactNode;
   isOpen?: boolean;
   doneButton?: ButtonProps;
@@ -42,31 +42,31 @@ const PrimaryDialog = ({
     <>
       {isOpen && (
         <div
-          className="w-full h-full bg-backdrop  fixed top-0 left-0 flex items-center justify-center z-50"
+          className="fixed left-0 top-0  z-50 flex h-full w-full items-center justify-center bg-backdrop"
           onClick={(e) => {
             e.stopPropagation();
             cancelButton?.onClick?.();
           }}
         >
           <div
-            className={`bg-background min-w-[500px] w-full max-w-[700px]  rounded-lg overflow-hidden max-h-[80vh] flex flex-col ${className}`}
+            className={`flex max-h-[80vh] w-full min-w-[500px]  max-w-[700px] flex-col overflow-hidden rounded-lg bg-background ${className}`}
             onClick={(e) => e.stopPropagation()}
-            style={{minHeight: minHeight, minWidth: minWidth}}
+            style={{ minHeight: minHeight, minWidth: minWidth }}
           >
             <div
-              className={` p-5  text-2xl font-bold bg-background font-styrene ${title?.className}`}
+              className={` bg-background  p-5 font-styrene text-2xl font-bold ${title?.className}`}
             >
               {title?.text}
             </div>
             <div
-              className={`flex flex-col gap-5 overflow-auto flex-grow px-5 pb-5 bg-background`}
+              className={`flex flex-grow flex-col gap-5 overflow-auto bg-background px-5 pb-5`}
             >
               {children}
             </div>
-            <div className="flex justify-end p-3 border-t border-border w-full bg-background">
+            <div className="flex w-full justify-end border-t border-border bg-background p-3">
               <div className="flex gap-5">
                 <button
-                  className="border rounded-md px-3 py-2"
+                  className="rounded-md border px-3 py-2"
                   title={cancelButton?.text || "Cancel"}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -76,8 +76,8 @@ const PrimaryDialog = ({
                   Cancel
                 </button>
                 <button
-                  className="rounded-md px-3 py-2 bg-primary text-primary-foreground"
-                  style={{maxHeight: "40px"}}
+                  className="rounded-md bg-primary px-3 py-2 text-primary-foreground"
+                  style={{ maxHeight: "40px" }}
                   title={doneButton?.text || "Done"}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -98,7 +98,7 @@ const PrimaryDialog = ({
 
 PrimaryDialog.displayName = "PrimaryDialog";
 
-export {PrimaryDialog};
+export { PrimaryDialog };
 // import "./CustomDialog.css";
 // import {SimpleButton} from "components/Buttons/SimpleButton";
 

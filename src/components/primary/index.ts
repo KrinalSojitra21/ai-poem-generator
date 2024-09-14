@@ -1,10 +1,3 @@
-export {PrimaryButton} from "./PrimaryButton";
-export {PrimarySelect} from "./PrimarySelect";
-export {PrimaryInput} from "./PrimaryInput";
-// export {} from "./PrimarySelect";
-// export {} from "./PrimaryTextarea";
-// export {} from "./PrimaryCheckbox";
-// export {} from "./PrimaryRadio";
-// export {} from "./PrimarySwitch";
-// export {} from "./PrimaryDatepicker";
-// export {} from "./PrimaryFileUpload";
+export { PrimaryButton } from "./PrimaryButton";
+export { PrimaryInput } from "./PrimaryInput";
+export { PrimarySelect } from "./PrimarySelect";
